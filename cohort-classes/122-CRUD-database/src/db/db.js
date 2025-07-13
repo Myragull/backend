@@ -1,5 +1,4 @@
-const { default: mongoose } = require('mongoose');
-const express = require('mongoose');
+const mongoose = require('mongoose');
 
 function connectToDb(){
     mongoose.connect("")
