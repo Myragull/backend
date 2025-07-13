@@ -18,12 +18,10 @@ app.post("/notes", async (req, res) => {
 
 app.get('/notes',async(req,res)=>{
   const notes =await noteModel.find()
-
   res.json({
     message:"Notes created successfully",
     notes
   })
-
 })
 
 app.delete('/notes/:id',async (req,res)=>{
@@ -31,10 +29,25 @@ app.delete('/notes/:id',async (req,res)=>{
   await noteModel.findOneAndDelete({
     _id: noteId
   })
-
   res.json({
     message: "Note Deleted successfully"
   })
+})
+
+app.patch('/notes/:id',async(req,res)=>{
+  const noteId = req.params.id
+  const {title} = req.body
+
+  await noteModel.findByIdAndUpdate(
+    {
+      _id:noteId
+    },{
+      title:title
+    })
+
+    res.json({
+      message: "Note Updated successfully"
+    })
 })
 
 connectToDb();
