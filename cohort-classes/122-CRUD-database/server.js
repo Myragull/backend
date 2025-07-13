@@ -26,6 +26,17 @@ app.get('/notes',async(req,res)=>{
 
 })
 
+app.delete('/notes/:id',async (req,res)=>{
+  const noteId = req.params.id;
+  await noteModel.findOneAndDelete({
+    _id: noteId
+  })
+
+  res.json({
+    message: "Note Deleted successfully"
+  })
+})
+
 connectToDb();
 app.listen(3000, () => {
   console.log("server is running");
