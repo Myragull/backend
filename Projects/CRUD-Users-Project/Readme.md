@@ -18,7 +18,7 @@ A simple RESTful CRUD API built with **Node.js**, **Express**, and **MongoDB Atl
 ---
 
 ## 📂 Project Structure
-`
+```
 /src
 ├── db/
 │ ├── db.js
@@ -27,7 +27,8 @@ A simple RESTful CRUD API built with **Node.js**, **Express**, and **MongoDB Atl
 server.js
 .env
 .gitignore
-`
+
+```
 
 ---
 
